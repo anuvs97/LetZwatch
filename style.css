@@ -387,6 +387,10 @@ section{
     .navbar a{
         color: var(--text-color);
     }
+    .navbar a:hover{
+        color: var(--main-color);
+        font-weight: 700;
+    }
     .navbar a::after{
         display: none;
     }

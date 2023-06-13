@@ -364,14 +364,18 @@ section{
     body{
         background: blue;
     }
+    /* to create 3 line menu */
     #menu-icon {
         display: initial;
         color: var(--bg-color);
     }
+    header.shadow #menu-icon {
+        color: var(--text-color);
+    }
     /* nav set vertically */
     .navbar{
         position: absolute;
-        top: 100%;
+        top: -570px;
         left: 0;
         right: 0;
         display: flex;
@@ -391,8 +395,14 @@ section{
         color: var(--main-color);
         font-weight: 700;
     }
+    header.shadow a:hover{
+        color: var(--main-color);
+    }
     .navbar a::after{
         display: none;
+    }
+    .navbar.active {
+        top: 100%;
     }
 
 

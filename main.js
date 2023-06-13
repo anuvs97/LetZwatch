@@ -1,3 +1,14 @@
+// my code
+
+// header off code
+let header= document.querySelector('header');
+window.addEventListener('scroll', ()=>{
+  header.classList.toggle('shadow',window.scrollY>0);
+});
+
+
+
+
 /*swiper code */
 
 var swiper = new Swiper(".home", {

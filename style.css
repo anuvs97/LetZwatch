@@ -39,7 +39,7 @@ header{
     width: 100%;
     top: 0;
     right: 0;
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -361,9 +361,6 @@ section{
 }
 
 @media (max-width:580px){
-    body{
-        background: blue;
-    }
     /* to create 3 line menu */
     #menu-icon {
         display: initial;

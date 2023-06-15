@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetZ-Watch-Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pay-style.css">
+    <!--Box icons link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <!-- Nav bar  -->
+    <header>
+        <a href="index.html" class="logo">
+            <i class='bx bxs-movie'></i> LetZ-Watch
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <!-- Menu part -->
+        <ul class="navbar">
+            <li><a href="index.html#home" class="home-active">Home</a></li>
+            <li><a href="index.html#movies">Movies</a></li>
+            <li><a href="index.html#coming">Coming</a></li>
+            <li><a href="index.html#newsletter">Newsletter</a></li>
+        </ul>
+        <a href="#" class="btn">Sign In</a>
+    </header>
+
+    <section class="input-group">
+        <h1>Take your Ticket</h1>
+
+          <form action="">
+
+            <label for="name">Name:</label>
+          <input type="text" id="name" /><br>
+
+          <label for="phoneNumber">Phone:</label>
+          <input type="text" id="phoneNumber" /><br>
+
+          <label for="numberOfItems">Count:</label>
+          <input type="number" id="numberOfItems" oninput="updateBill()" /><br><br>
+
+        <div id="totalBill"></div><br>
+        <button onclick="calculateBill()" class="btn">Submit<span> and Pay</span></button>
+
+          </form>
+    </section>
+
+
+    <!-- Footer section -->
+    <section class="footer">
+        <a href="#" class="logo">
+            <i class='bx bxs-movie'></i>LetZ-Watch
+        </a>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="#"><i class='bx bxl-tiktok'></i></a>
+        </div>
+    </section>
+
+    <!-- End notes -->
+    <div class="endline">
+        &#169; VSMAX Company All Rights Reserved.
+    </div>
+
+
+
+    <!--my js-->
+    <script src="main.js"></script>
+    <script src="billScript.js"></script>
+</body>
+</html>

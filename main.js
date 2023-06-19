@@ -14,28 +14,13 @@ menu.onclick = () =>{
   navbar.classList.toggle('active');
 }
 
-// to remove toggle data while user scroll
+// remove toggle data if user scroll
 window.onscroll = () => {
   menu.classList.remove('bx-x');
   navbar.classList.remove('active');
 }
 
 
-/*swiper code */
-
-var swiper = new Swiper(".home", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    
-  });
 
 
   /*swiper code for coming soon */

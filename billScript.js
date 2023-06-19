@@ -6,16 +6,17 @@ function calculateBill() {
     let numberOfItems = parseInt(document.getElementById("numberOfItems").value);
 
     // Validate input fields
-    if (name === "" || phoneNumber === "" || isNaN(numberOfItems) || numberOfItems <= 0 || phoneNumber.length !== 10) {
+    if (name === "" || phoneNumber === "" || isNaN(numberOfItems) || numberOfItems <= 0) {
       alert(`${name} please check given data and fill all fields`);
       return;
     }
 
-    // Calculate total bill
-    var totalBill = numberOfItems * 150;
+    // Validate phone number digits
+    if (phoneNumber.length !== 10) {
+      alert(`${name} Phone number should be 10 digits. Please enter a valid phone number.`);
+      return;
+    } 
 
-    // Display the calculated bill
-    document.getElementById("totalBill").textContent = "Total Bill: " + totalBill;
 
     // Show confirmation and clear input fields
     alert("Your ticket is booked now.");
@@ -27,18 +28,18 @@ function calculateBill() {
 
   function updateBill() {
     // Get input value
-    var numberOfItems = parseInt(document.getElementById("numberOfItems").value);
+    let numberOfItems = parseInt(document.getElementById("numberOfItems").value);
 
     // Check for negative numbers
     if (numberOfItems < 0) {
-      alert("Number of items cannot be negative.");
+      alert(`${name} Please enter valid number`);
       document.getElementById("numberOfItems").value = "";
       return;
     }
 
     // Calculate total bill
-    var totalBill = numberOfItems * 150;
+    let totalBill = numberOfItems * 150;
 
     // Display the calculated bill
-    document.getElementById("totalBill").textContent = "Total Bill: " + totalBill;
+    document.getElementById("totalBill").textContent = "Total Bill: " + totalBill + "/-";
   }

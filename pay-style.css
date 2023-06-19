@@ -95,8 +95,9 @@ h1{
 /* warning msg */
 form p{
     color: var(--main-color);
-    font-size: small;
+    font-size: smaller;
     padding-top: 0.5rem;
+    
 }
 
 /* quotes */
@@ -144,4 +145,5 @@ form p{
     .input-group .btn span{
         display: none;
     }
+
 }

@@ -144,7 +144,6 @@ section{
 
 }
 .home div span{
-    /* text-align: center; */
     margin: 2.5rem;
 }
 
@@ -353,6 +352,10 @@ section{
     }
     .navbar.active {
         top: 100%;
+    }
+
+    .home div span{
+        text-align: center;
     }
 
 

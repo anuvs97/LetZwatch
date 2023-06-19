@@ -144,13 +144,10 @@ section{
 
 }
 .home div span{
-    margin: 2.5rem;
+    margin: 0 4rem;
 }
 
 /*Movie section*/
-/* .movies{
-    margin-top: -100px;
-} */
 .heading{
     max-width: 950px;
     margin-block-start: 0;
@@ -355,8 +352,9 @@ section{
     }
 
     .home div span{
-        text-align: center;
+        text-align:center;
+        margin: 0 0.6rem;
+        font-size: 75%;
     }
-
 
 }

@@ -304,6 +304,10 @@ section{
     .navbar{
         column-gap: 1.5rem;
     }
+    .home div img{
+        width: 100%;
+    
+    }
     .newsletter form{
         width: 65%;
     }

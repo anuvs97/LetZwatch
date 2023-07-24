@@ -1,45 +1,88 @@
 "use strict"
-function calculateBill() {
-    // Get input values
-    let name = document.getElementById("name").value;
-    let phoneNumber = document.getElementById("phoneNumber").value;
-    let numberOfItems = parseInt(document.getElementById("numberOfItems").value);
 
-    // Validate input fields
-    if (name === "" || phoneNumber === "" || isNaN(numberOfItems) || numberOfItems <= 0) {
-      alert(`${name} please check given data and fill all fields`);
-      return;
-    }
+function showErrorMessage(message) {
+  alert(message);
+}
 
-    // Validate phone number digits
-    if (phoneNumber.length !== 10) {
-      alert(`${name} Phone number should be 10 digits. Please enter a valid phone number.`);
-      return;
-    } 
+function showProcessingMessage() {
+  document.getElementById('processing').style.display = 'block';
+}
 
+function hideProcessingMessage() {
+  document.getElementById('processing').style.display = 'none';
+}
 
-    // Show confirmation and clear input fields
-    alert("Your ticket is booked now.");
-    document.getElementById("name").value = "";
-    document.getElementById("phoneNumber").value = "";
-    document.getElementById("numberOfItems").value = "";
-    document.getElementById("totalBill").textContent = "";
+function showElement(elementId) {
+  document.getElementById(elementId).style.display = 'block';
+}
+
+function hideElement(elementId) {
+  document.getElementById(elementId).style.display = 'none';
+}
+
+document.getElementById('verifyButton').addEventListener('click', function() {
+  var name = document.getElementById('name').value;
+  var phoneNumber = document.getElementById('phoneNumber').value;
+
+  if (name === '' || phoneNumber === '') {
+    showErrorMessage('Please fill in all required fields.');
+    return;
   }
 
-  function updateBill() {
-    // Get input value
-    let numberOfItems = parseInt(document.getElementById("numberOfItems").value);
-
-    // Check for negative numbers
-    if (numberOfItems < 0) {
-      alert(`${name} Please enter valid number`);
-      document.getElementById("numberOfItems").value = "";
-      return;
-    }
-
-    // Calculate total bill
-    let totalBill = numberOfItems * 150;
-
-    // Display the calculated bill
-    document.getElementById("totalBill").textContent = "Total Bill: " + totalBill + "/-";
+  if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+    showErrorMessage('Please enter a valid 10-digit phone number.');
+    return;
   }
+
+  showElement('otpForm');
+});
+
+document.getElementById('confirmButton').addEventListener('click', function() {
+  var otp = document.getElementById('otp').value;
+
+  if (otp !== '234567') {
+    showErrorMessage('Please enter a valid OTP or check Phone number.');
+    return;
+  }
+
+  showProcessingMessage();
+
+  setTimeout(function() {
+    hideProcessingMessage();
+    showElement('ticketForm');
+    hideElement('otpForm');
+  }, 3000);
+});
+
+document.getElementById('ticketCount').addEventListener('input', function() {
+  var ticketCount = document.getElementById('ticketCount').value;
+  var totalRate = document.getElementById('totalRate');
+  var rate = 150;
+
+  if (ticketCount <= 0 || isNaN(ticketCount)) {
+    totalRate.textContent = '';
+  } else {
+    var calculatedRate = rate * ticketCount;
+    totalRate.textContent = 'Total Rate: ' + calculatedRate+'/-';
+  }
+});
+
+document.getElementById('submitPayButton').addEventListener('click', function() {
+  var ticketCount = document.getElementById('ticketCount').value;
+
+  if (ticketCount <= 0 || isNaN(ticketCount)) {
+    showErrorMessage('Please enter a valid ticket count.');
+    return;
+  }
+
+  showProcessingMessage();
+
+  setTimeout(function() {
+    hideProcessingMessage();
+    alert('Your tickets are booked, Enjoy the show.');
+    location.replace('index.html');
+  }, 4000);
+});
+
+
+

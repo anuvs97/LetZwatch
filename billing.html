@@ -33,22 +33,44 @@
 
     <section class="input-group">
         
-          <form action="">
+        <div class="form">
 
-          <input type="text" id="name"  placeholder="Enter Your Name"/><br>
-          <input type="text" id="phoneNumber" placeholder="Phone Number"/><br>
-          <input type="number" id="numberOfItems" oninput="updateBill()" placeholder="Number of Tickets"/><br><br>
+          <input type="text" id="name" required placeholder="Enter Your Name"/><br>
+          <input type="text" id="phoneNumber" required placeholder="Phone Number"/><br>
+          <button type="button" id="verifyButton" class="btn">Verify</button>
 
-        <div id="totalBill"></div><br>
-        <button onclick="calculateBill()" class="btn">Submit<span> and Pay</span></button>
-            <p> ( Cancellation unavailable) </p>
-          </form>
+          <!-- number otp verification -->
+          <div id="otpForm" class="hidden">
+            <input type="text" id="otp" required placeholder="Enter the OTP"><br>
+            <button type="button" id="confirmButton" class="btn">Confirm</button>
+          </div>
+
+          <!-- ticket book, number enter -->
+          <div id="ticketForm" class="hidden">
+            <input type="number" id="ticketCount" min="1" required placeholder="Enter ticket count"><br>
+            <p id="totalRate"></p><br>
+            <button type="button" id="submitPayButton" class="btn">Submit<span> and Pay</span></button>
+            <p>( Cancellation unavailable)</p>
+          </div>
+        
+          <!-- processing msg -->
+          <div id="processing" class="hidden"><br> Processing...</div>
+          
+          
+        
+            <!-- <div id="totalBill"></div><br>
+            <button onclick="calculateBill()" class="btn">Submit<span> and Pay</span></button>
+            <p> ( Cancellation unavailable) </p> -->
+        </div>
+          
     </section>
 
     <div class="quotes">
         Step into a world of cinematic wonders. 
             Reserve your tickets and immerse yourself in the magic of the silver screen.
     </div>
+
+
 
     <!-- Footer section -->
     <section class="footer">
@@ -71,7 +93,7 @@
 
 
     <!--my js-->
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
     <script src="billScript.js"></script>
 </body>
 </html>

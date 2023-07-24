@@ -55,7 +55,7 @@ h1{
     row-gap: 1.4rem;
 }
     
-.input-group form{
+.input-group .form{
     width: 60%;
     background: var(--bg-color);
     opacity: 0.87;
@@ -67,7 +67,7 @@ h1{
 }
 
 
-.input-group form input{
+.input-group .form input{
     width: 80%;
     text-align: center;
     height:2.3rem;
@@ -75,15 +75,26 @@ h1{
     border: 0;
     margin-top: 0.5rem;
 }
-.input-group form input:focus{
+input:focus{
     outline-color:  rgb(230, 230, 230);
     border-radius: 7px;
 }
 
-#totalBill{
+
+/* hiden data */
+.hidden {
+    display: none;
+  }
+
+  
+  #totalRate{
     color: var(--main-color);
     font-weight: 700;
-}
+    font-size: 120%;
+    }
+  #processing{
+    color: var(--main-color);
+  }
 .input-group .btn{
     width: 60%;
     border: none;
@@ -93,7 +104,7 @@ h1{
     cursor: pointer;
 }
 /* warning msg */
-form p{
+.form p{
     color: var(--main-color);
     font-size: smaller;
     padding-top: 0.5rem;
@@ -140,7 +151,7 @@ form p{
 /* responsive design */
 
 @media (max-width:570px) {
-    .input-group form input{
+    .input-group .form input{
         width: 100%;
     }
     .input-group .btn span{

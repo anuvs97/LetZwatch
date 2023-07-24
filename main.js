@@ -24,7 +24,7 @@ window.onscroll = () => {
 
 
   /*swiper code for coming soon */
-  var swiper = new Swiper(".coming-container", {
+ let swiper = new Swiper(".coming-container", {
     spaceBetween: 20,
     loop:true,
     autoplay: {
